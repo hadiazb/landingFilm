@@ -1,0 +1,163 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  font-family: 'Gelasio', serif;
+  font-size: 1.5em;
+}
+
+/* Estructura completa del website */
+.container {
+  display: grid;
+  margin:0;
+  grid-template:70px 1fr 80px / 150px 1fr;
+  grid-template-areas: "header header"
+                       "left contenido"
+                       "footer  footer";
+  grid-gap: 1px ;
+  height: 100vh;
+}
+.item{
+  padding: 5px;
+}
+.header{
+  grid-area: header;
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 0 50px rgba(176, 173, 173, 0.89);
+}
+.left{
+  grid-area: left;
+  background-color: rgba(255, 98, 98, 0.89);
+}
+.contenido{
+  grid-area: contenido;
+}
+.footer{
+  grid-area: footer;
+  box-shadow: 0 0 20px rgba(176, 173, 173, 0.89);
+}
+
+
+/* Estructura del header, nombrada cabecera */
+
+.cabecera{
+  margin-left: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:  center;
+}
+.container .header .cabecera .logo img{
+  width: 50px;
+  height: 50px;
+  margin-left: 30px;
+}
+.container .header .cabecera .search a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding-left: 10px;
+}
+.container .header .cabecera .search span{
+  padding-left: 20px;
+  padding-right: 10px
+}
+.container .header .cabecera .search input{
+  margin-right:  40px;
+  height: 30px;
+  border-radius: 10px;
+  width: 400px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 3px rgb(66, 66, 66);
+}
+.container .header .cabecera .search img{
+  border-radius: 50%;
+  cursor: pointer;
+}
+.container .header .cabecera .search ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+/* Contenido para el left o menu de navegación */
+.left ul .menu a{
+  text-decoration: none;
+  color: rgb(254, 254, 254);
+  font-size: .8em;
+  font-weight: 700;
+}
+.left ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 20px;
+}
+.left ul .menu a span{
+  display: block;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+.left ul .menu {
+  margin-bottom: 10px;
+}
+
+/* CSS para el contenido de la pagina, Grid Layout */
+.contenido .post-list{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 293px));
+  justify-content: center;
+  grid-gap: 30px;
+}
+.post{
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+.post-image{
+  margin: 0;
+}
+.post-image img{
+  width: 100%;
+  vertical-align: top;
+  box-shadow: 0 0 10px rgb(110, 115, 242);
+  border-radius: 5px;
+}
+.post-overlay{
+  background-color: rgb(249, 231, 2, .4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.post:hover .post-overlay{
+  display: flex;
+}
+.post-likes,
+.post-commnents{
+  width: 80px;
+  margin: 7px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+.contenido .title{
+  margin-top: 20px;
+  text-align: center;
+  color: rgba(255, 98, 98, 0.89);
+  text-shadow: 0 1px 1px rgb(103, 103, 103);
+}
+/* Contenido del Footer */
